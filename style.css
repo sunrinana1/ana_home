@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 
-
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
 
 * {
     padding: 0;
@@ -22,17 +26,17 @@ body {}
 .logo {
     width: 20em;
     transform: scale(1.5);
-    
+
 }
 
 .dummy {
     transition: all .2s;
-    height:3px;
-    width:0px;
+    height: 3px;
+    width: 0px;
 }
 
 .centered {
-    width:42vw;
+    width: 42vw;
 }
 
 .extender {
@@ -43,8 +47,8 @@ body {}
 .start_text {
     display: flex;
     flex-direction: column;
-    
-    color:white;
+
+    color: white;
     transition: all .4s;
 }
 
@@ -54,12 +58,12 @@ body {}
 }
 
 .start_text :nth-child(2) {
-    width:fit-content;
+    width: fit-content;
     font-size: 2em;
     border-right: 0.15em solid #FCB01B;
 }
 
-.start_text .typeDone{
+.start_text .typeDone {
     animation: blink 1s step-end infinite;
 }
 
@@ -68,18 +72,20 @@ body {}
     visibility: collapse;
     border-right: none;
 }
+
 .header {
-    position:sticky;
+    position: sticky;
     top: 0;
     background-color: rgb(41, 41, 41);
     color: white;
-    display:flex;
+    display: flex;
     justify-content: center;
 }
 
 .headerLogoContainer {
     height: 3em;
 }
+
 .headerLogo {
     height: 3em;
 }
@@ -100,6 +106,15 @@ li {
 }
 
 @keyframes blink {
-    from, to {border-color: transparent;}
-    50% { border-color: #FCB01B};
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #FCB01B
+    }
+
+    ;
 }
