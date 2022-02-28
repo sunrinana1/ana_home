@@ -43,7 +43,6 @@ window.addEventListener("load", () => {
         logoYellow.forEach(el => {
             el.offset.baseVal = 0;
         })
-        return;
     }
 
     let typeTarget = document.querySelector(".type");
