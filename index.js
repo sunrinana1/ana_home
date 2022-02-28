@@ -2,13 +2,7 @@ window.addEventListener("scroll", () => {
     
     
     let scroll = this.scrollY;
-    let logoYellow = document.querySelectorAll(".logoYellow");
-    if(window.innerWidth <= 800){
-        logoYellow.forEach(el => {
-            el.offset.baseVal = 0;
-        })
-        return;
-    }
+    
 
     let height = window.innerHeight * 1/5;
     let ratio = (scroll >= height) ? 0 : Math.abs(Math.round(scroll / height * 1000) / 1000 - 1);
@@ -43,6 +37,14 @@ window.addEventListener("load", () => {
         intervalType: 50,
         humanize: 0.3,
     });
+
+    let logoYellow = document.querySelectorAll(".logoYellow");
+    if(window.innerWidth <= 800){
+        logoYellow.forEach(el => {
+            el.offset.baseVal = 0;
+        })
+        return;
+    }
 
     let typeTarget = document.querySelector(".type");
     typeTarget.addEventListener("th.endType", () => {
