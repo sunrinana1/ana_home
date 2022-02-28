@@ -1,22 +1,23 @@
 window.addEventListener("scroll", () => {
-    
-    
+
+
     let scroll = this.scrollY;
     let logoYellow = document.querySelectorAll(".logoYellow");
+    if (window.innerWidth > 800) {
+        let height = window.innerHeight * 1 / 5;
+        let ratio = (scroll >= height) ? 0 : Math.abs(Math.round(scroll / height * 1000) / 1000 - 1);
+        if (ratio === Infinity || ratio >= 1) {
+            ratio = 1;
+        }
+        if (scroll === 0) {
+            ratio = 1;
+        }
 
-    let height = window.innerHeight * 1/5;
-    let ratio = (scroll >= height) ? 0 : Math.abs(Math.round(scroll / height * 1000) / 1000 - 1);
-    if (ratio === Infinity || ratio >= 1) {
-        ratio = 1;
-    }
-    if (scroll === 0) {
-        ratio = 1;
-    }
-
-    if (ratio < 1 || scroll === 0) {
-        logoYellow.forEach(el => {
-            el.offset.baseVal = ratio;
-        })
+        if (ratio < 1 || scroll === 0) {
+            logoYellow.forEach(el => {
+                el.offset.baseVal = ratio;
+            })
+        }
     }
     console.log(ratio)
     if (ratio == 0) {
@@ -39,7 +40,7 @@ window.addEventListener("load", () => {
     });
 
     let logoYellow = document.querySelectorAll(".logoYellow");
-    if(window.innerWidth <= 800){
+    if (window.innerWidth <= 800) {
         logoYellow.forEach(el => {
             el.offset.baseVal = 0;
         })
