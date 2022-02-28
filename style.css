@@ -9,8 +9,13 @@
     scroll-behavior: smooth;
 }
 
+.bodyLayout {
+    height: auto;
+    overflow: hidden;
+}
+
 .start {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
