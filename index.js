@@ -1,4 +1,8 @@
 window.addEventListener("scroll", () => {
+    if(window.innerWidth <= 800){
+        return;
+    }
+    
     let scroll = this.scrollY;
     let logoYellow = document.querySelectorAll(".logoYellow");
 
