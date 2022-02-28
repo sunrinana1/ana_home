@@ -1,39 +1,48 @@
 @media only screen and (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
     * {
         margin: 0;
         padding: 0;
-        width:100vw;
+        width: 100vw;
     }
 
     body {
-        overflow-x:hidden;
+        overflow-x: hidden;
     }
-    
-    .start{
-        width:100vw;
-        display:flex;
+
+    .start {
+        width: 100vw;
+        height: calc(var(--vh, 1vh) * 100);
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: flex-end;
     }
 
     .dummy {
-        display:none;
+        display: none;
     }
 
-    .start_text{
+    .start_text {
         transition: all .4s;
     }
 
     .start_text :first-child {
         font-size: 3em;
     }
+
     .start_text :nth-child(2) {
         font-size: 1.5em;
     }
 
     .header {
-        width:100vw;
+        width: 100vw;
         display: flex;
         justify-content: center;
     }
@@ -42,4 +51,3 @@
         width: 100%;
     }
 }
-
