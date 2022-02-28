@@ -44,6 +44,7 @@
 
     color: white;
     transition: all .4s;
+    transition: border 0s;
 }
 
 .start_text :first-child {
