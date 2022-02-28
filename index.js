@@ -3,9 +3,11 @@ window.addEventListener("scroll", () => {
 
     let scroll = this.scrollY;
     let logoYellow = document.querySelectorAll(".logoYellow");
+    let height = window.innerHeight * 1 / 5;
+    let ratio = (scroll >= height) ? 0 : Math.abs(Math.round(scroll / height * 1000) / 1000 - 1);
     if (window.innerWidth > 800) {
-        let height = window.innerHeight * 1 / 5;
-        let ratio = (scroll >= height) ? 0 : Math.abs(Math.round(scroll / height * 1000) / 1000 - 1);
+
+
         if (ratio === Infinity || ratio >= 1) {
             ratio = 1;
         }
