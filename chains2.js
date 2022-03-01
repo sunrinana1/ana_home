@@ -133,6 +133,12 @@ var curriDesc = Bodies.rectangle(render.bounds.min.x,300, 300, 300, {
     render: {
         fillStyle: "lightgray",
         borderRadius: "20px",
+        text:{
+			content:"Test",
+			color:"blue",
+			size:16,
+			family:"Papyrus",
+		},
     },
     chamfer: 5
 })
