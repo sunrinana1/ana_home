@@ -87,9 +87,9 @@ function changeSpriteByNumber(number) {
         
     } else {
         if(window.innerWidth <= 768) {
-            x_position += ((number - dotNumber) * 275);
+            x_position += ((dotNumber - number) * 275);
         } else {
-            x_position += ((number - dotNumber) * 400);
+            x_position += ((dotNumber - number) * 400);
         }
     }
     if(window.innerWidth <= 768) {
