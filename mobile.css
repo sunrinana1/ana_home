@@ -15,6 +15,14 @@
         align-items: center;
     }
 
+    .arrowDiv {
+        width: 275px;
+        height: 275px;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
     .shadowedBox {
         max-width: 70vw;
         display: flex;

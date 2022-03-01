@@ -352,13 +352,13 @@ footer {
 
 .curriBoxContainer {
     display: flex;
-    min-width: 450px;
+    min-width: 500px;
     justify-content: center;
     align-items: center;
 }
 
 .shadowedBox {
-    min-width: 500px;
+    min-width: 550px;
     display: flex;
     justify-content: space-between;
     align-items: center;

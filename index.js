@@ -19,6 +19,7 @@ function onSpriteClick(direction) {
     let idx_Xpx = style.indexOf("px");
     let idx_temp = style.indexOf("scroll") + 7;
     x_position = parseInt(style.slice(idx_temp, idx_Xpx));
+    console.log(x_position);
 
     if (direction === "left") {
         if(window.innerWidth <= 768) {
