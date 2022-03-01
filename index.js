@@ -137,7 +137,9 @@ window.addEventListener("resize", () => {
 
 window.addEventListener("load", () => {
     clock = document.querySelector(".clock");
-
+    if(window.innerWidth <= 768) {
+        document.querySelector(".sprite").style.bacground = "url('small_sprite.png') 0px 0";
+    }
 
 
     var getCurrentTime = moment(); //자체 제작 api를 못할 경우 기본 사용법 (사용자 컴퓨터상의 시간)
