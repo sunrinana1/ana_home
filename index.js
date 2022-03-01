@@ -138,7 +138,7 @@ window.addEventListener("resize", () => {
 window.addEventListener("load", () => {
     clock = document.querySelector(".clock");
     if(window.innerWidth <= 768) {
-        document.querySelector(".sprite").style.bacground = "url('small_sprite.png') 0px 0";
+        document.querySelector(".sprite").style.background = "url('small_sprite.png') 0px 0";
     }
 
 
