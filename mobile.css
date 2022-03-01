@@ -25,10 +25,13 @@
 
     .curriBoxContainer {
         max-width: 100vw;
+        display: flex;
+        justify-content: center;
     }
 
     .shadowedBox {
-        max-width: 100%;
+        max-width: 300px;
+        padding: 0;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -39,6 +42,9 @@
     }
 
     .curriText {
+        text-align: center;
+        font-size: 1.5em;
+        margin-top: 0.5em;
         background-color: aqua;
     }
 
