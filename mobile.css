@@ -24,17 +24,17 @@
     }
 
     .shadowedBox {
-        width: 70vw;
+        width: 60vw;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 100vh;
+        height: 60vh;
         flex-direction: column;
         box-shadow: 0px 6px 9px 1px rgba(0, 0, 0, 0.31);
     }
 
     .sprite {
-        width:275px;
+        width: 275px;
         height: 275px;
         display: flex;
         flex-direction: column;
