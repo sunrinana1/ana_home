@@ -21,14 +21,23 @@ function onSpriteClick(direction) {
     x_position = parseInt(style.slice(idx_temp, idx_Xpx));
 
     if (direction === "left") {
-        x_position += 400;
+        if(window.innerWidth <= 768) {
+            x_position += 275;
+        } else {
+            x_position += 400;
+        }
+        
         if (dotNumber <= 1) {
             dotNumber = 5;
         } else {
             dotNumber--;
         }
     } else {
-        x_position -= 400;
+        if(window.innerWidth <= 768) {
+            x_position -= 275;
+        } else {
+            x_position -= 400;
+        }
         if (dotNumber >= 5) {
             dotNumber = 1;
         } else {
@@ -66,9 +75,18 @@ function setColor() {
 
 function changeSpriteByNumber(number) {
     if (dotNumber <= number) {
-        x_position -= ((number - dotNumber) * 400);
+        if(window.innerWidth <= 768) {
+            x_position -= ((number - dotNumber) * 275);
+        } else {
+            x_position -= ((number - dotNumber) * 400);
+        }
+        
     } else {
-        x_position += ((dotNumber - number) * 400);
+        if(window.innerWidth <= 768) {
+            x_position += ((number - dotNumber) * 275);
+        } else {
+            x_position += ((number - dotNumber) * 400);
+        }
     }
     if(window.innerWidth <= 768) {
         document.querySelector(".sprite").style.background = `url('small_sprite.png') ${x_position}px 0`;
