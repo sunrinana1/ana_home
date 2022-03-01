@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 
+@font-face {
+    font-family: 'Digital Numbers Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Digital Numbers Regular'), url('DigitalNumbers-Regular.woff') format('woff');  
+    /*src: url("../DigitalNumbers-Regular.woff") format('woff')*/
+}
+
+::-webkit-scrollbar {
+    background: transparent;
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b3b3b;
+    border-radius: 3px;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -14,7 +33,7 @@
     overflow: hidden;
 }
 
-.start {
+.header {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -29,7 +48,7 @@
 }
 
 .dummy {
-    transition: all .2s;
+    transition: all .4s;
     height: 3px;
     width: 0px;
 }
@@ -43,7 +62,7 @@
     height: 300vh;
 }
 
-.start_text {
+.header_text {
     display: flex;
     flex-direction: column;
 
@@ -52,18 +71,18 @@
     transition: border 0s;
 }
 
-.start_text :first-child {
+.header_text :first-child {
     font-size: 5em;
     font-weight: 300;
 }
 
-.start_text :nth-child(2) {
+.header_text :nth-child(2) {
     width: fit-content;
     font-size: 2em;
     border-right: 0.15em solid #FCB01B;
 }
 
-.start_text .typeDone {
+.header_text .typeDone {
     animation: blink 1s step-end infinite;
 }
 
@@ -73,28 +92,37 @@
     border-right: none;
 }
 
-.header {
-    position: sticky;
-    top: 0;
+.nav {
+    height: 5em;
     background-color: rgb(41, 41, 41);
     color: white;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.headerLogoContainer {
+.navLogoContainer {
     height: 3em;
 }
 
-.headerLogo {
+.navLogo {
     height: 3em;
+    width: 4em;
+    margin-left: 1em;
+    opacity: 0%;
+    transition: all .4s;
+    transform: scale(0);
+}
+
+.nav.attached .navLogo {
+    opacity: 100%;
+    transform: scale(1);
 }
 
 .lists:first-child {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
 li {
@@ -103,6 +131,34 @@ li {
     color: white;
     text-align: center;
     padding: 16px;
+    margin: 1em;
+}
+
+.navLeft {
+    display: flex;
+    align-items: center;
+}
+
+.clock {
+    font-family: 'Digital Numbers Regular';
+    font-size: 2em;
+}
+
+.reqruitForm {
+    transition: 0.5s;
+    padding: 1em 2em;
+    margin: 1em;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    border: 1px solid #FCB01B;
+    border-radius: 50px ;
+}
+
+.attached {
+    position: fixed;
+    top:0;
+    width: 100%;
 }
 
 @keyframes blink {
@@ -113,8 +169,180 @@ li {
     }
 
     50% {
-        border-color: #FCB01B
+        border-color: #FCB01B;
     }
-
-    ;
 }
+
+.content1 {
+    width: 100%;
+    min-height: 768px;
+    background: url('bg1.jpg') 15em 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.afterAttach {
+    margin-top: 5em;
+}
+
+.descDiv {
+    width:100%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.curriDiv {
+    width: 100%;
+    min-height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.desc {
+    width: 50%;
+    min-height: 20em;
+    margin-left: -100%;
+    background-image: linear-gradient(to left, rgba(252,176,27,0), rgba(252,176,27,1.0));
+}
+
+.contentText {
+    color: white;
+}
+
+.colorChange {
+    width: 100vw;
+    min-height: 5em;
+    background-image: linear-gradient(to bottom, rgba(11,13,61,1), rgba(0,0,0,0));
+}
+
+.desc:nth-child(n) {
+    padding-left: 1em;
+}
+
+.subtitle {
+    font-size: 3.2em;
+    line-height: 2em;
+}
+
+.text {
+    font-size: 1.6em;
+    line-height: 2.6em;
+}
+
+.curriculum {
+    display: flex;
+    justify-content: center;
+}
+
+.curriculum canvas {
+    margin-top: 20px;
+}
+
+.qna {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.qnaDiv {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: auto;
+    align-content: header;
+
+}
+.qnaBox {
+    flex: 0 0 auto;
+    margin: 8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    transition: all .3s;
+}
+
+.qaText {
+    font-size: 1.7em;
+    text-align: center;
+    color: white;
+    transition: visibility 0.2s, opacity 0.2s linear;
+}
+
+.qnaBox1 {
+    width: 20em;
+    height: 20em;
+    background-color: #FCB01B;
+}
+
+.qnaBox2 {
+    width: 20em;
+    height: 20em;
+    background-color: #F38522;
+}
+
+.qnaBox3 {
+    width: 20em;
+    height: 20em;
+    background-color: #E84424;
+}
+
+.qnaBox1.showAns {
+    background-color: rgb(170, 121, 24);
+}
+
+.qnaBox2.showAns {
+    background-color: rgb(175, 95, 25);
+}
+
+.qnaBox3.showAns {
+    background-color: rgb(156, 49, 27);
+}
+
+.facebookLink:link, .facebookLink:visited {
+    color: black;
+}
+
+.facebookLink:hover {
+    color: #F38522;
+}
+.divider {
+    min-height: 4em;
+    width:100vw;
+}
+
+footer {
+    min-height: 7em;
+    background-color: #3b3b3b;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color: lightgray;
+    width: 100vw;
+}
+
+.credit {
+    min-width: 15em;
+}
+
+.footerDummy {
+    width: 15em;
+    height: 1px;
+}
+
+.curriTitle {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 3em;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+

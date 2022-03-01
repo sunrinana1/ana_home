@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico">
     <script src="mobile.js"></script>
+    <script src="matter.js"></script>
+    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css">
     <script src="https://unpkg.com/type-hangul"></script>
@@ -16,19 +18,20 @@
 
 <body>
     <!-- #E84424 -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108.5 94" style="height: 0; width: 0; position: absolute; visibility: hidden;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108.5 94"
+        style="height: 0; width: 0; position: absolute; visibility: hidden;">
         <defs>
             <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="3.657698e-06" y1="66.4617" x2="108.5419"
-                y2="66.4617" >
+                y2="66.4617">
                 <stop class="logoYellow" offset="1" style="stop-color:#FCB01B" />
                 <stop offset="1" style="stop-color:#E84424" />
             </linearGradient>
-            <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="0" y1="47" x2="108.5418" y2="47" >
+            <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="0" y1="47" x2="108.5418" y2="47">
                 <stop class="logoYellow" offset="1" style="stop-color:#FCB01B" />
                 <stop offset="1" style="stop-color:#E84424" />
             </linearGradient>
             <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="3.657698e-06" y1="56.8349" x2="108.5419"
-                y2="56.8349" >
+                y2="56.8349">
                 <stop class="logoYellow" offset="1" style="stop-color:#FCB01B" />
                 <stop offset="1" style="stop-color:#E84424" />
             </linearGradient>
@@ -36,36 +39,97 @@
         <symbol id="AnALogo" viewBox="0 0 108.5 94">
             <title>AnALogo</title>
             <polygon class="st0"
-                points="72.8,78.1 76.7,71.3 80.5,78.1 76.6,78.1 67.4,94 108.5,94 76.7,38.9 44.9,94 63.6,94 72.8,78.1 	" fill="url('#SVGID_1_')"/>
-            <polygon class="st1" points="54.3,0 0,94 18.9,94 63.7,16.4 	" fill="url('#SVGID_2_')"/>
-            <polygon class="st2" points="65.6,51.8 74.9,35.7 65.6,19.7 22.7,94 34.5,94 62.1,46.2 	" fill="url('#SVGID_3_')"/>
+                points="72.8,78.1 76.7,71.3 80.5,78.1 76.6,78.1 67.4,94 108.5,94 76.7,38.9 44.9,94 63.6,94 72.8,78.1 	"
+                fill="url('#SVGID_1_')" />
+            <polygon class="st1" points="54.3,0 0,94 18.9,94 63.7,16.4 	" fill="url('#SVGID_2_')" />
+            <polygon class="st2" points="65.6,51.8 74.9,35.7 65.6,19.7 22.7,94 34.5,94 62.1,46.2 	"
+                fill="url('#SVGID_3_')" />
         </symbol>
     </svg>
 
     <div class="bodyLayout">
-        <div class="start">
+        <div class="header">
             <div class="dummy"></div>
             <div class="logoContainer">
                 <svg class="logo" role="img">
                     <use xlink:href="#AnALogo" />
                 </svg>
             </div>
-            <div class="start_text">
-                <span>AnA7</span>
+            <div class="header_text">
+                <div class="header_title">
+                    AnA
+                </div>
                 <span class="type">선린 소프트웨어과 서버개발 동아리</span>
             </div>
         </div>
-        <div class="header">
-            <div class="clock"></div>
-            <div class="headerLogoContainer">
-                <svg class="headerLogo" role="img">
-                    <use xlink:href="#AnALogo" />
-                </svg>
+        <div class="main">
+            <div class="nav">
+                <div class="navLeft">
+                    <div class="clockContainer">
+                        <div class="clock"></div>
+                    </div>
+
+                    <div class="navLogoContainer">
+                        <svg class="navLogo" role="img">
+                            <use xlink:href="#AnALogo" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="lists">
+                    <ul>
+                        <li class="list">소개</li>
+                        <li class="list">커리큘럼</li>
+                        <li class="list">Q&A</li>
+                    </ul>
+                </div>
             </div>
+            <div class="content1">
+                <div class="descDiv">
+                    <div class="contentText desc">
+                        <span class="subtitle">Intro</span><br><br>
+                        <span class="text">
+                            AnA는 Node.js와 Linux, MySQL 등을 이용해 <br>직접 웹 서버를 구축하는 동아리입니다. <br>JS, TS, MySQL 등의 다양한 커리큘럼을
+                            통해, <br>직접 웹의 내부로 뛰어들어 기능을 연구해봅시다!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="colorChange"></div>
+            <p class="curriTitle">커리큘럼</p>
+            <div class="curriculum">
+
+            </div>
+            <div class="qna">
+                <div class="qnaDiv">
+                    <div class="qnaBox qnaBox1">
+                        <span class="qaText qaText1">.9, .5기 계획이 있나요?</span>
+                    </div>
+                    <div class="qnaBox qnaBox2">
+                        <span class="qaText qaText2">웹이 처음인데 괜찮을까요?</span>
+                    </div>
+                    <div class="qnaBox qnaBox3">
+                        <span class="qaText qaText3">누구나 지원할 수 있을가요?</span>
+                    </div>
+                </div>
+                <p style="font-size:1.5em;">문의는 <a href="https://www.facebook.com/sunrinana" class="facebookLink"
+                        target="__blank">AnA 페이스북</a>으로 부탁드립니다!</p>
+
+            </div>
+            <div class="divider"></div>
+            <footer class="footer">
+                <div class="footerDummy"></div>
+                <div class="footerDesc">
+                    <p>선린 인터넷 고등학교</p>
+                    <p>소프트웨어과 서버개발반 AnA</p>
+                </div>
+                <div class="credit">
+                    <p>Developed By 민경록</a>(11기 부장)</p>
+                    <p>Designed By 민경록, 김혜린</p>
+                </div>
+            </footer>
         </div>
-    
-        <div class="extender"></div>
+
     </div>
+    <script src="chains2.js"></script>
 </body>
 
 </html>
