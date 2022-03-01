@@ -1,7 +1,8 @@
 const playAnimation = 0;
 let clock;
 
-var width = $(window).width(), height = $(window).height();
+var width = $(window).width(),
+    height = $(window).height();
 
 window.addEventListener("scroll", () => {
     let scroll = this.scrollY;
@@ -11,7 +12,7 @@ window.addEventListener("scroll", () => {
 
     let headerLogoRatio = (scroll >= height) ? 0 : Math.abs(Math.round(scroll / height * 1000) / 1000 - 1);
     let contentRatio = (scroll >= height * 10 * 12 / 5) ? 0 : Math.abs(Math.round(scroll / height * 10 * 6 / 5 * 1000) / 100000 - 1);
-    if(window.innerWidth <= 768){
+    if (window.innerWidth <= 768) {
         contentRatio = (scroll >= height * 10 * 12 / 5) ? 0 : Math.abs(Math.round(scroll / height * 10 * 5 / 5 * 1000) / 100000 - 1);
     }
     if (window.innerWidth > 768) {
@@ -28,7 +29,7 @@ window.addEventListener("scroll", () => {
                 el.offset.baseVal = headerLogoRatio;
             })
         }
-        
+
 
     }
     if (contentRatio <= 0.9) {
@@ -60,45 +61,39 @@ window.addEventListener("scroll", () => {
 })
 
 window.addEventListener("resize", () => {
-    if($(window).width() != width || $(window).height() != height){
+    if ($(window).width() != width || $(window).height() != height) {
         location.reload();
-      }
+    }
 })
 
 window.addEventListener("load", () => {
     clock = document.querySelector(".clock");
 
-    var x = setInterval(function() {
-        let gap = Math.abs(moment().diff("2022-03-01:20:00:00", 'seconds'));
-        var hours = gap / (60*60);
-        var minutes = (gap % (60*60)) / (60);
-        var seconds = (gap % (60*60)) % (60);
+    
 
-        let hourText;
-        let minuteText;
-        let secondText;
+    var getCurrentTime = moment(); //자체 제작 api를 못할 경우 기본 사용법 (사용자 컴퓨터상의 시간)
+    // var getCurrentTime = moment(result.data.date + ' ' + result.data.time); //자체 제작 api를 통해 서버에서 현재 시간 가져왔을 경우
+    var targetTime = moment('2022-03-01 20:00:00');
+    var getCurrentTimeUnix = getCurrentTime.unix();
+    var targetTimeUnix = targetTime.unix();
+    var leftTime = targetTimeUnix - getCurrentTimeUnix;
+    var duration = moment.duration(leftTime, 'seconds');
+    var interval = 1000;
 
-        if (hours < 10) {
-            hourText = `0${Math.floor(hours)}`;
-        } else {
-            hourText = `${Math.floor(hours)}`;
-        }
-        if (minutes < 10) {
-            minuteText = `0${Math.floor(minutes)}`;
-        } else {
-            minuteText = `${Math.floor(minutes)}`;
-        }
-        if (seconds < 10) {
-            secondText = `0${Math.floor(seconds)}`;
-        } else {
-            secondText = `${Math.floor(seconds)}`;
-        }
-        if (gap <= 0) {
-            clearInterval(x);
+    var intv = setInterval(function(){
+        if (duration.asSeconds() <= 1 || getCurrentTimeUnix >= targetTimeUnix ) {
             document.querySelector(".clockContainer").innerHTML = "<btn class='reqruitForm' title='13기 모집 중' onclick='window.open(`모집링크`)'>지원하러가기!</btn>"
+          clearInterval(intv);
+        }else{
+          duration = moment.duration(duration.asSeconds() - 1, 'seconds');
+          var timer = {
+            hours : (duration.hours() < 10) ? '0' + duration.hours() : duration.hours(),
+            minutes : (duration.minutes() < 10) ? '0' + duration.minutes() : duration.minutes(),
+            seconds : (duration.seconds() < 10) ? '0' + duration.seconds() : duration.seconds()
+          }
+          clock.innerText =`${timer.hours}:${timer.minutes}:${timer.seconds}`
         }
-        clock.innerText = `${hourText}:${minuteText}:${secondText}`;
-    }, 1000)
+      }, interval);
 
     TypeHangul.type('.type', {
         intervalType: 50,
@@ -162,22 +157,22 @@ window.addEventListener("load", () => {
                     break;
             }
         })
-    })  
+    })
     let switcher = 1;
     let isChanging = true;
 
     let boxesArr = [htmlJs, ts, nodeJS, linux, mySQL];
 
-    let colorChange = setInterval(function() {
+    let colorChange = setInterval(function () {
         boxesArr.forEach(el => {
             switcher = Math.round(Math.random())
-            if(switcher == 1){
+            if (switcher == 1) {
                 el.render.fillStyle = "darkgray"
             } else {
                 el.render.fillStyle = "rgb(135, 206, 235)"
             }
         })
-        if(isChanging === false) {
+        if (isChanging === false) {
             clearInterval(colorChange)
         }
     }, 1000);
