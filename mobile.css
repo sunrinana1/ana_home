@@ -10,6 +10,12 @@
         justify-content: center;
     }
 
+    .header_text :nth-child(2) {
+        width: fit-content;
+        font-size: 1em;
+        border-right: 0.15em solid #FCB01B;
+    }
+
     .headerLogoContainer {
         display: flex;
         align-items: center;
@@ -87,7 +93,8 @@
     }
 
     .desc {
-        min-width: 80vw;
+        min-width: 93vw;
+        font-size: 0.9em;
     }
 
     .clock {
@@ -104,6 +111,19 @@
 
     .footerDummy {
         display: none;
+    }
+
+    .facebookLink {
+        font-size: 1em;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+    }
+    .credit {
+        display:flex;
+        justify-content: flex-end;
     }
 }
 

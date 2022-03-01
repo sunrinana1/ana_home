@@ -1,4 +1,4 @@
-const playAnimation = 0;
+const playAnimation = 1;
 let clock;
 let dotNumber = 1;
 let x_position = 0;
@@ -173,7 +173,7 @@ window.addEventListener("load", () => {
 
     var getCurrentTime = moment(); //자체 제작 api를 못할 경우 기본 사용법 (사용자 컴퓨터상의 시간)
     // var getCurrentTime = moment(result.data.date + ' ' + result.data.time); //자체 제작 api를 통해 서버에서 현재 시간 가져왔을 경우
-    var targetTime = moment('2022-03-01 20:00:00');
+    var targetTime = moment('2022-03-01 08:00:00');
     var getCurrentTimeUnix = getCurrentTime.unix();
     var targetTimeUnix = targetTime.unix();
     var leftTime = targetTimeUnix - getCurrentTimeUnix;
@@ -186,6 +186,7 @@ window.addEventListener("load", () => {
             clearInterval(intv);
         } else {
             duration = moment.duration(duration.asSeconds() - 1, 'seconds');
+            console.log(duration.hours());
             var timer = {
                 hours: (duration.hours() < 10) ? '0' + duration.hours() : duration.hours(),
                 minutes: (duration.minutes() < 10) ? '0' + duration.minutes() : duration.minutes(),
