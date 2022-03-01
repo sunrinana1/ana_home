@@ -26,14 +26,14 @@
         font-size: 3em;
     }
 
-    ul :nth-child(2) {
+    .nav{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .lists {
         display: none;
     }
-
-    ul :nth-child(1),ul :nth-child(3){
-        margin: 0.7em;
-    }
-
     .content1 {
         background: url('bg1.jpg') 0 0;
         font-size: .7em;
