@@ -358,7 +358,6 @@ footer {
 }
 
 .shadowedBox {
-    width: 1vw;
     min-width: 500px;
     display: flex;
     justify-content: space-between;
