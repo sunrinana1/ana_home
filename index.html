@@ -73,23 +73,23 @@
 
                     
                 </div>
-                <div class="navLogoContainer">
+                <div class="navLogoContainer" onclick="myscrollTo('header')">
                     <svg class="navLogo" role="img">
                         <use xlink:href="#AnALogo" />
                     </svg>
                 </div>
                 <div class="lists">
                     <ul>
-                        <li class="list">소개</li>
-                        <li class="list">커리큘럼</li>
-                        <li class="list">Q&A</li>
+                        <li class="list" onclick="myscrollTo('content1')">소개</li>
+                        <li class="list" onclick="myscrollTo('curriTitle')">커리큘럼</li>
+                        <li class="list" onclick="myscrollTo('qna')">Q&A</li>
                     </ul>
                 </div>
             </div>
             <div class="content1">
                 <div class="descDiv">
                     <div class="contentText desc">
-                        <span class="subtitle">Intro</span><br><br>
+                        <span class="subtitle">소개</span><br><br>
                         <span class="text">
                             AnA는 Node.js와 Linux, MySQL 등을 이용해 <br>직접 웹 서버를 구축하는 동아리입니다. <br>JS, TS, MySQL 등의 다양한 커리큘럼을
                             통해, <br>직접 웹의 내부로 뛰어들어 기능을 연구해봅시다!</span>
@@ -97,7 +97,7 @@
                 </div>
             </div>
             <div class="colorChange"></div>
-            <p class="curriTitle">커리큘럼</p>
+            <div class="titleDiv"><p class="curriTitle">커리큘럼</p></div>
 
             <div class="curriBoxContainer">
                 <div class="shadowedBox">
@@ -124,6 +124,7 @@
             <div class="curriculum">
 
             </div>
+            <div class="titleDiv"><p class="curriTitle">Q&A</p></div>
             <div class="qna">
                 <div class="qnaDiv">
                     <div class="qnaBox qnaBox1">

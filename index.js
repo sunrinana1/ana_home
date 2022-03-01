@@ -14,6 +14,10 @@ let curriTextArr = [
     "Linux의 명령어들과 기본 설정법, <br>그리고 서버를 배포하는 방법을 배웁니다."
 ]
 
+function myscrollTo(element) {
+    document.querySelector(`.${element}`).scrollIntoView();
+}
+
 function onSpriteClick(direction) {
     let style = getComputedStyle(document.querySelector(".sprite")).background;
     let idx_Xpx = style.indexOf("px");
@@ -51,7 +55,6 @@ function onSpriteClick(direction) {
         document.querySelector(".sprite").style.background = `url('sprite.png') ${x_position}px 0`;
     }
     
-    document.querySelector(".sprite").style.backgroundColor = `#3b3b3b`;
     setColor();
     document.querySelector(`#dots${dotNumber}`).style.color = "white";
     changeCurriText(dotNumber);
@@ -94,8 +97,6 @@ function changeSpriteByNumber(number) {
     } else {    
         document.querySelector(".sprite").style.background = `url('sprite.png') ${x_position}px 0`;
     }
-    
-    document.querySelector(".sprite").style.backgroundColor = `#3b3b3b`
     dotNumber = number;
     setColor();
     document.querySelector(`#dots${dotNumber}`).style.color = "white";
@@ -171,26 +172,21 @@ window.addEventListener("load", () => {
     }
 
 
-    var getCurrentTime = moment(); //자체 제작 api를 못할 경우 기본 사용법 (사용자 컴퓨터상의 시간)
-    // var getCurrentTime = moment(result.data.date + ' ' + result.data.time); //자체 제작 api를 통해 서버에서 현재 시간 가져왔을 경우
-    var targetTime = moment('2022-03-01 08:00:00');
-    var getCurrentTimeUnix = getCurrentTime.unix();
-    var targetTimeUnix = targetTime.unix();
-    var leftTime = targetTimeUnix - getCurrentTimeUnix;
-    var duration = moment.duration(leftTime, 'seconds');
+    
+    var targetTime = moment('2022-03-09 00:00:00');
     var interval = 1000;
 
     var intv = setInterval(function () {
-        if (duration.asSeconds() <= 1 || getCurrentTimeUnix >= targetTimeUnix) {
+        var getCurrentTime = moment();
+        var leftTime = Math.floor((targetTime - getCurrentTime)/ 1000);
+        if (leftTime <= 0 || getCurrentTime >= targetTime) {
             document.querySelector(".clockContainer").innerHTML = "<btn class='reqruitForm' title='13기 모집 중' onclick='window.open(`모집링크`)'>지원하러가기!</btn>"
             clearInterval(intv);
         } else {
-            duration = moment.duration(duration.asSeconds() - 1, 'seconds');
-            console.log(duration.hours());
             var timer = {
-                hours: (duration.hours() < 10) ? '0' + duration.hours() : duration.hours(),
-                minutes: (duration.minutes() < 10) ? '0' + duration.minutes() : duration.minutes(),
-                seconds: (duration.seconds() < 10) ? '0' + duration.seconds() : duration.seconds()
+                hours: (Math.floor(leftTime / (60*60)) <10) ? `0${Math.floor(leftTime / (60*60)) <10 }` : (Math.floor(leftTime / (60*60))),
+                minutes: (Math.floor((leftTime % (60*60)) /60) < 10) ? `0${Math.floor((leftTime % (60*60)) /60)}` : (Math.floor((leftTime % (60*60)) /60)),
+                seconds: (Math.floor((leftTime % (60*60)) % 60) < 10) ? `0${(Math.floor((leftTime % (60*60)) % 60))}` : (Math.floor((leftTime % (60*60)) % 60))
             }
             clock.innerText = `${timer.hours}:${timer.minutes}:${timer.seconds}`
         }

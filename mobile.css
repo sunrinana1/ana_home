@@ -62,7 +62,6 @@
         flex-direction: column;
         background-size: 100%;
         background: url("small_sprite.png") 0px 0;
-        background-color: #3b3b3b;
     }
 
     .header_text {
