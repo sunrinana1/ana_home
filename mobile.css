@@ -24,11 +24,11 @@
     }
 
     .shadowedBox {
-        max-width: 70vw;
+        width: 70vw;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        min-height: 100vh;
+        height: 100vh;
         flex-direction: column;
         box-shadow: 0px 6px 9px 1px rgba(0, 0, 0, 0.31);
     }
