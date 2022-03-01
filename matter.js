@@ -7095,7 +7095,7 @@
                                 else if (part.render.text.content)
                                     content = part.render.text.content;
 
-                                c.textBaseline = "middle";
+                                c.textBaseline = "top";
                                 c.textAlign = "center";
                                 c.fillStyle = color;
                                 c.font = fontsize + 'px ' + fontfamily;

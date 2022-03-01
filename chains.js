@@ -12,6 +12,8 @@ Example.chains = function() {
         Mouse = Matter.Mouse,
         Bodies = Matter.Bodies;
 
+    Common.setDecomp(require('poly-decomp'));
+
     // create engine
     var engine = Engine.create(),
         world = engine.world;

@@ -124,24 +124,24 @@ console.log(render);
 console.log(render.bounds);
 console.log(render.bounds.min)
 
-var curriDesc = Bodies.rectangle(render.bounds.min.x,300, 300, 300, {
-    isStatic: true,
-    collisionFilter: {
-        category: 0x0008
-    },
-    label: "curriDesc",
-    render: {
-        fillStyle: "lightgray",
-        borderRadius: "20px",
-        text:{
-			content:"Test",
-			color:"blue",
-			size:16,
-			family:"Papyrus",
-		},
-    },
-    chamfer: 5
-})
+// var curriDesc = Bodies.rectangle(render.bounds.min.x,300, 300, 300, {
+//     isStatic: true,
+//     collisionFilter: {
+//         category: 0x0008
+//     },
+//     label: "curriDesc",
+//     render: {
+//         fillStyle: "lightgray",
+//         borderRadius: "20px",
+//         text:{
+// 			content:"Test",
+// 			color:"black",
+// 			size: "30",
+// 			family:"'Noto Sans KR', sans-serif",
+// 		},
+//     },
+//     chamfer: 5
+// })
 
 Composites.chain(ropeC, 0.3, 0, -0.3, 0, {
     stiffness: 1,
@@ -279,7 +279,6 @@ Composite.add(world, [
     nodeJS,
     linux,
     mySQL,
-    curriDesc,
     Bodies.rectangle(canvasWidth *1/2, canvasHeight *16/17, canvasWidth*2, 50.5, { isStatic: true })
 ]);
 
@@ -306,7 +305,6 @@ Events.on(mouseConstraint, "mousedown", (e) => {
     } 
     if(lists.includes(mouseConstraint.body.label)){
         console.log(mouseConstraint.body.label)
-        console.log(curriDesc.width);
     }
 })
 
