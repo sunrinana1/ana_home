@@ -97,6 +97,7 @@ function changeSpriteByNumber(number) {
     } else {    
         document.querySelector(".sprite").style.background = `url('sprite.png') ${x_position}px 0`;
     }
+    disableClick(document.querySelector(".slideDot"));
     dotNumber = number;
     setColor();
     document.querySelector(`#dots${dotNumber}`).style.color = "white";
