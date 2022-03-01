@@ -100,6 +100,7 @@
     color: white;
     display: flex;
     align-items: center;
+    z-index: 5;
     justify-content: space-between;
 }
 
@@ -402,6 +403,8 @@ footer {
     color: gray;
     cursor: pointer;
 
+    z-index: 1;
+
     transition: all .4s;
 }
 
@@ -432,12 +435,10 @@ footer {
     padding-left: 15px;
     margin-right: 15px;
 }
-
 .curriText {
     text-align: center;
     font-size: 1.5em;
     margin-top: 0.5em;
-    background-color: green;
 }
 
 #introText {
