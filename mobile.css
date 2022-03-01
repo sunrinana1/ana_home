@@ -15,7 +15,13 @@
         align-items: center;
     }
 
+    .sprite {
+        background: url("small_sprite.png") 0px 0;
+    }
+
     .header_text {
+        width:275px;
+        height: 275px;
         display: flex;
         justify-content: center;
         margin-top: 30px;

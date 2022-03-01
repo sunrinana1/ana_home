@@ -1,6 +1,7 @@
 const playAnimation = 0;
 let clock;
 let dotNumber = 1;
+let x_position = 0;
 
 var width = $(window).width(),
     height = $(window).height();
