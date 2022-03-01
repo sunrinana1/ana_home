@@ -35,6 +35,9 @@ function onSpriteClick(direction) {
             dotNumber++;
         }
     }
+    if(window.innerWidth <= 768) {
+        document.querySelector(".sprite").style.background = `url('small_sprite.png') ${x_position}px 0`;
+    }
     document.querySelector(".sprite").style.background = `url('sprite.png') ${x_position}px 0`;
     document.querySelector(".sprite").style.backgroundColor = `#3b3b3b`;
     setColor();
@@ -64,6 +67,9 @@ function changeSpriteByNumber(number) {
         x_position -= ((number - dotNumber) * 400);
     } else {
         x_position += ((dotNumber - number) * 400);
+    }
+    if(window.innerWidth <= 768) {
+        document.querySelector(".sprite").style.background = `url('small_sprite.png') ${x_position}px 0`;
     }
     document.querySelector(".sprite").style.background = `url('sprite.png') ${x_position}px 0`;
     document.querySelector(".sprite").style.backgroundColor = `#3b3b3b`
