@@ -73,7 +73,7 @@ function changeSpriteByNumber(number) {
     if(window.innerWidth <= 768) {
         document.querySelector(".sprite").style.background = `url('small_sprite.png') ${x_position}px 0`;
     } else {    
-        
+        document.querySelector(".sprite").style.background = `url('sprite.png') ${x_position}px 0`;
     }
     
     document.querySelector(".sprite").style.backgroundColor = `#3b3b3b`
