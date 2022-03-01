@@ -1,6 +1,8 @@
 const playAnimation = 0;
 let clock;
 
+var width = $(window).width(), height = $(window).height();
+
 window.addEventListener("scroll", () => {
     let scroll = this.scrollY;
     let logoYellow = document.querySelectorAll(".logoYellow");
@@ -58,43 +60,40 @@ window.addEventListener("scroll", () => {
 })
 
 window.addEventListener("resize", () => {
-    location.reload();
+    if($(window).width() != width || $(window).height() != height){
+        location.reload();
+      }
 })
 
 window.addEventListener("load", () => {
     clock = document.querySelector(".clock");
 
-    const DDay = new Date("2022-03-01:20:00:00").getTime();
-
     var x = setInterval(function() {
-        const now = new Date().getTime();
-        const gap = DDay - now;
-        var days = Math.floor(gap / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        hours += days * 24;
-        var minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((gap % (1000 * 60)) / 1000);
+        let gap = Math.abs(moment().diff("2022-03-01:20:00:00", 'seconds'));
+        var hours = gap / (60*60);
+        var minutes = (gap % (60*60)) / (60);
+        var seconds = (gap % (60*60)) % (60);
 
         let hourText;
         let minuteText;
         let secondText;
 
         if (hours < 10) {
-            hourText = `0${hours}`;
+            hourText = `0${Math.floor(hours)}`;
         } else {
-            hourText = `${hours}`;
+            hourText = `${Math.floor(hours)}`;
         }
         if (minutes < 10) {
-            minuteText = `0${minutes}`;
+            minuteText = `0${Math.floor(minutes)}`;
         } else {
-            minuteText = `${minutes}`;
+            minuteText = `${Math.floor(minutes)}`;
         }
         if (seconds < 10) {
-            secondText = `0${seconds}`;
+            secondText = `0${Math.floor(seconds)}`;
         } else {
-            secondText = `${seconds}`;
+            secondText = `${Math.floor(seconds)}`;
         }
-        if (gap < 0) {
+        if (gap <= 0) {
             clearInterval(x);
             document.querySelector(".clockContainer").innerHTML = "<btn class='reqruitForm' title='13기 모집 중' onclick='window.open(`모집링크`)'>지원하러가기!</btn>"
         }
