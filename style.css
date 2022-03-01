@@ -462,6 +462,9 @@ footer {
     justify-content: center; 
     flex-wrap:wrap;
 }
+.credit {
+    align-items: flex-end;
+}
 
 #introText {
     font-size: 23px;

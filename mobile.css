@@ -122,7 +122,14 @@
     }
     .credit {
         display:flex;
-        justify-content: flex-end;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .footerDesc {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
     }
 }
 
