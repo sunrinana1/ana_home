@@ -393,7 +393,7 @@ footer {
     user-select: none;
     display: flex;
     justify-content: center;
-    z-index: 4;
+    z-index: 1;
 }
 
 .dots {
