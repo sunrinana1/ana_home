@@ -181,7 +181,7 @@ window.addEventListener("load", () => {
         var getCurrentTime = moment();
         var leftTime = Math.floor((targetTime - getCurrentTime)/ 1000);
         if (leftTime <= 0 || getCurrentTime >= targetTime) {
-            document.querySelector(".clockContainer").innerHTML = "<btn class='reqruitForm' title='13기 모집 중' onclick='window.open(`모집링크`)'>지원하러가기!</btn>"
+            document.querySelector(".clockContainer").innerHTML = "<btn class='reqruitForm' title='13기 모집 중' onclick='window.open(`https://forms.gle/PSBZF36ct6m85XES6`)'>지원하러가기!</btn>"
             clearInterval(intv);
         } else {
             var timer = {
