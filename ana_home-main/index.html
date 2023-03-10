@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="mobile.js"></script>
+    <script src="matter.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <script src="https://unpkg.com/type-hangul"></script>
+    <script src="index.js"></script>
+    <title>AnA</title>
+</head>
+
+<body>
+    <!-- #E84424 -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108.5 94" style="height: 0; width: 0; position: absolute; visibility: hidden;">
+        <defs>
+            <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="3.657698e-06" y1="66.4617" x2="108.5419"
+                y2="66.4617">
+                <stop class="logoYellow" offset="1" style="stop-color:#FCB01B" />
+                <stop offset="1" style="stop-color:#E84424" />
+            </linearGradient>
+            <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="0" y1="47" x2="108.5418" y2="47">
+                <stop class="logoYellow" offset="1" style="stop-color:#FCB01B" />
+                <stop offset="1" style="stop-color:#E84424" />
+            </linearGradient>
+            <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="3.657698e-06" y1="56.8349" x2="108.5419"
+                y2="56.8349">
+                <stop class="logoYellow" offset="1" style="stop-color:#FCB01B" />
+                <stop offset="1" style="stop-color:#E84424" />
+            </linearGradient>
+        </defs>
+        <symbol id="ANALogo" viewBox="0 0 108.5 94">
+            <title>ANALogo</title>
+            <polygon class="st0"
+                points="72.8,78.1 76.7,71.3 80.5,78.1 76.6,78.1 67.4,94 108.5,94 76.7,38.9 44.9,94 63.6,94 72.8,78.1 	"
+                fill="url('#SVGID_1_')" />
+            <polygon class="st1" points="54.3,0 0,94 18.9,94 63.7,16.4 	" fill="url('#SVGID_2_')" />
+            <polygon class="st2" points="65.6,51.8 74.9,35.7 65.6,19.7 22.7,94 34.5,94 62.1,46.2 	"
+                fill="url('#SVGID_3_')" />
+        </symbol>
+    </svg>
+
+    <div class="bodyLayout">
+        <div class="header">
+            <div class="dummy"></div>
+            <div class="logoContainer">
+                <svg class="logo" role="img">
+                    <use xlink:href="#ANALogo" />
+                </svg>
+            </div>
+            <div class="header_text">
+                <div class="header_title">
+                    ANA
+                </div>
+                <span class="type">한국 서버 전문가 집단</span>
+            </div>
+        </div>
+        <div class="main">
+            <div class="nav">
+                <div class="navLeft">
+                    <div class="clockContainer">
+                        <div class="clock"></div>
+                    </div>
+
+
+                </div>
+                <div class="navLogoContainer" onclick="myscrollTo('header')">
+                    <svg class="navLogo" role="img">
+                        <use xlink:href="#ANALogo" />
+                    </svg>
+                </div>
+                <div class="lists">
+                    <ul>
+                        <li class="list li" onclick="myscrollTo('content1')">소개</li>
+                        <li class="list li" onclick="myscrollTo('curriTitle')">커리큘럼</li>
+                        <li class="list li" onclick="myscrollTo('qna')">Q&A</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content1">
+                <div class="descDiv">
+                    <div class="contentText desc">
+                        <span class="subtitle">소개</span><br><br>
+                        <span class="text">
+                            ANA는 Node.js와 Linux, DB 등을 이용해 <br>직접 웹 서버를 구축하는 동아리입니다. <br>JS, Rust, MySQL 등의 다양한 커리큘럼을
+                            통해, <br>직접 웹의 내부로 뛰어들어 기능을 연구해봅시다!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="colorChange"></div>
+            <div class="titleDiv">
+                <p class="curriTitle">커리큘럼</p>
+            </div>
+
+            <div class="curriBoxContainer">
+                <div class="shadowedBox">
+                    <div class="sprite">
+                        <div class="arrowDiv">
+                            <div class="arrowContainer" onclick="onSpriteClick('left'); disableClick(this);"><img src="left.png" class="arrows left"></div>
+                            <div class="arrowContainer" onclick="onSpriteClick('right'); disableClick(this);"><img src="right.png" class="arrows right"></div>
+                        </div>
+                        <div class="slideDot">
+                            <span class="dots" id="dots1" onclick="changeSpriteByNumber(1)">•</span>
+                            <span class="dots" id="dots2" onclick="changeSpriteByNumber(2)">•</span>
+                            <span class="dots" id="dots3" onclick="changeSpriteByNumber(3)">•</span>
+                            <span class="dots" id="dots4" onclick="changeSpriteByNumber(4)">•</span>
+                            <span class="dots" id="dots5" onclick="changeSpriteByNumber(5)">•</span>
+                        </div>
+                    </div>
+                    <div class="curriText">
+                        Javascript, SQL,Node.js를 공부하며 <br>서버의 기초를 배웁니다.
+                    </div>
+                </div>
+            </div>
+            <div class="curriculum">
+
+            </div>
+            <div class="titleDiv">
+                <p class="curriTitle">Q&A</p>
+            </div>
+            <div class="qna">
+                <div class="qnaDiv">
+                    <div class="qnaBox qnaBox1">
+                        <span class="qaText qaText1">.9, .5기 계획이 있나요?</span>
+                    </div>
+                    <div class="qnaBox qnaBox2">
+                        <span class="qaText qaText2">서버가 처음인데 괜찮을까요?</span>
+                    </div>
+                    <div class="qnaBox qnaBox3">
+                        <span class="qaText qaText3">누가 지원할 수 있을가요?</span>
+                    </div>
+                    <div class="qnaBox qnaBox4">
+                        <span class="qaText qaText4">실력이 오를까요?<br> 제가 따라 갈수 있을까요?</span>
+                    </div>
+                </div>
+                <p style="font-size:1em;">문의는 <a href="https://www.instagram.com/ana_kr_corp/" class="facebookLink" target="__blank">ANA 인스타그램</a>으로 부탁드립니다!</p>
+
+            </div>
+            <div class="divider"></div>
+            <footer class="footer">
+                <div class="footerDummy"></div>
+                <div class="footerDesc">
+                    <p>서울특별시교육청 <br> 선린인터넷고등학교</p>
+                    <p>ANA</p>
+                </div>
+                <div class="credit">
+                    <p>11기 민경록님이 제작하신 페이지입니다.</p>
+                    <p>Hyelin,민경록님이 디자인 하셨습니다.</p>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+</body>
+
+</html>
