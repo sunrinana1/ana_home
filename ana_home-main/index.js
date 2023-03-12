@@ -174,7 +174,7 @@ window.addEventListener("load", () => {
 
 
 
-    var targetTime = moment('2023-03-14 00:00:00');
+    var targetTime = moment('2017-03-14 00:00:00');
     var interval = 1000;
 
     var intv = setInterval(function() {
